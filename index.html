@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year Priya 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+/* LOGIN SCREEN */
+#loginScreen{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(180deg,#020617,#0b1238,#1b0f3a);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.loginBox{
+    background:rgba(255,255,255,0.12);
+    padding:35px;
+    border-radius:25px;
+    width:90%;
+    max-width:340px;
+    text-align:center;
+    backdrop-filter:blur(12px);
+}
+
+.loginBox h2{
+    margin-bottom:10px;
+    color:#ff8fab;
+}
+
+.loginBox input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:1rem;
+}
+
+.loginBox button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#ff4d6d,#ff8fab,#4dabf7);
+    color:white;
+    font-size:1.05rem;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+#errorMsg{
+    margin-top:10px;
+    color:#ff6b6b;
+    font-size:0.9rem;
+}
+
+/* BODY */
+body{
+    background:linear-gradient(180deg,#020617,#0b1238,#1b0f3a);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NIGHT SKY */
+.stars{
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(1px 1px at 20% 30%, white, transparent),
+      radial-gradient(1px 1px at 80% 40%, white, transparent),
+      radial-gradient(2px 2px at 50% 70%, white, transparent);
+    background-size:300px 300px;
+    animation:stars 90s linear infinite;
+    z-index:-3;
+}
+@keyframes stars{to{background-position:1200px 1200px;}}
+
+/* SECTION */
+section{
+    min-height:100vh;
+    padding:70px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+/* HEADINGS */
+h1{
+    font-size:2.6rem;
+    margin-bottom:25px;
+    background:linear-gradient(90deg,#ff4d6d,#ff8fab,#4dabf7);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* TEXT */
+p{
+    font-size:1.05rem;
+    line-height:1.8;
+    max-width:850px;
+    opacity:0.95;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    max-width:1100px;
+    width:100%;
+}
+
+/* BOX */
+.box{
+    background:rgba(255,255,255,0.12);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(12px);
+    transform-style:preserve-3d;
+}
+
+.box h3{
+    font-size:1.15rem;
+    margin-bottom:12px;
+    color:#ff8fab;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:1.1rem;
+    cursor:pointer;
+    background:linear-gradient(90deg,#ff4d6d,#ff8fab,#4dabf7);
+    color:white;
+}
+
+/* PHOTO */
+.photo{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #ff8fab;
+    margin:20px 0;
+}
+
+/* 3D BASE */
+.threeD{
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style:preserve-3d;
+}
+
+/* MOBILE TAP */
+.threeD:active{
+    transform:
+      perspective(1000px)
+      rotateX(-10deg)
+      rotateY(10deg)
+      translateZ(45px)
+      scale(1.05);
+}
+
+/* HEARTS */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:22px;
+    animation:heartUp linear infinite;
+}
+@keyframes heartUp{
+    to{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+}
+
+/* FOOTER */
+footer{
+    background:#020617;
+    padding:30px;
+    text-align:center;
+    font-size:0.9rem;
+    opacity:0.85;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+    <div class="loginBox threeD">
+        <h2>🔐 Private Access</h2>
+        <p>Only for someone special 💖</p>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="checkLogin()">Unlock 💫</button>
+        <p id="errorMsg"></p>
+    </div>
+</div>
+    
+
+<div class="stars"></div>
+
+<!-- HERO -->
+<section>
+    <h1 class="threeD">Happy New Year Priya 💖</h1>
+    <p class="threeD">
+        We met in an online game called <b>Avakin Life</b>,  
+        but what we created was something real ✨
+    </p>
+    <button class="btn threeD">Forever Grateful 🌙</button>
+</section>
+
+<!-- STORY -->
+<section>
+    <h1 class="threeD">Our Journey 🎮</h1>
+    <div class="grid">
+
+        <div class="box threeD">
+            <h3>✨ Soul Connection</h3>
+            <p>“Some souls just understand each other upon meeting.”</p>
+        </div>
+
+        <div class="box threeD">
+            <h3>🌸 Gratitude</h3>
+            <p>
+                This is my small tribute to the most beautiful person,
+                inside and out. Forever grateful for you.
+            </p>
+        </div>
+
+        <div class="box threeD">
+            <h3>😂 Things I Love</h3>
+            <p>
+                You have the most infectious laugh I’ve ever heard.
+                Sometimes we do that type of talk and laugh — hahaha 🤍
+            </p>
+        </div>
+
+        <div class="box threeD">
+            <h3>❤️ Helping Me Through</h3>
+            <p>
+                When I was at my lowest,
+                you were the only one who didn’t leave my side.
+                I’ll never forget that.
+            </p>
+        </div>
+
+        <div class="box threeD">
+            <h3>💞 Uncontrollable Laughter</h3>
+            <p>
+                That time we laughed so hard
+                our stomachs hurt and we couldn’t even breathe.
+                Pure joy.
+            </p>
+        </div>
+
+        <div class="box threeD">
+            <h3>🌙 Why You’re Special</h3>
+            <p>
+                Because you are unapologetically you.
+                And that is the most beautiful thing in the world.
+            </p>
+        </div>
+
+        <div class="box threeD">
+            <h3>💖 Little Moments</h3>
+            <p>
+                Sometimes we talk nonsense,
+                sometimes we laugh for no reason —
+                and those moments mean everything.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PHOTO -->
+<section>
+    <h1 class="threeD">Someone Special 💗</h1>
+    <img src="priya.jpg" class="photo threeD" alt="Priya">
+    <p class="threeD">
+        Distance never matters when someone lives in your heart 💕
+    </p>
+</section>
+
+<!-- NEW YEAR -->
+<section>
+    <h1 class="threeD">New Year Wish 🎆</h1>
+    <div class="box threeD">
+        <p>
+            May this year bring you happiness, peace,
+            love, and endless smiles.
+            Thank you for being part of my life, Priya 💖
+        </p>
+    </div>
+</section>
+
+<footer>
+    Made with ❤️ by Abhishek <br>
+    Dedicated to Priya
+</footer>
+
+<script>
+    
+/* FLOATING HEARTS */
+setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML=["💖","❤️","💗","💞","💕","✨"][Math.floor(Math.random()*6)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=4+Math.random()*3+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),7000);
+},300);
+
+/* REAL 3D HOVER */
+document.querySelectorAll('.threeD').forEach(el=>{
+    el.addEventListener('mousemove',e=>{
+        const r=el.getBoundingClientRect();
+        const x=e.clientX-r.left-r.width/2;
+        const y=e.clientY-r.top-r.height/2;
+
+        el.style.transform=`
+          perspective(1000px)
+          rotateX(${-y/15}deg)
+          rotateY(${x/15}deg)
+          translateZ(35px)
+        `;
+        el.style.boxShadow="0 25px 50px rgba(255,105,180,0.4)";
+    });
+
+    el.addEventListener('mouseleave',()=>{
+        el.style.transform="none";
+        el.style.boxShadow="none";
+    });
+});
+
+</script>
+<script>
+function checkLogin(){
+    const u=document.getElementById("username").value;
+    const p=document.getElementById("password").value;
+    const error=document.getElementById("errorMsg");
+
+    if(u==="Abhishek" && p==="abhishekandpriya"){
+        document.getElementById("loginScreen").style.opacity="0";
+        setTimeout(()=>{
+            document.getElementById("loginScreen").style.display="none";
+        },500);
+    }else{
+        error.innerText="❌ Wrong username or password";
+    }
+}
+</script>
+
+
+</body>
+</html>
